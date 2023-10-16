@@ -363,7 +363,7 @@ export default function ResistorDraggable({ positions, component, setPositions, 
                         저항 조절하기
                     </ListItemText>
                 </MenuItem>
-                {/* <MenuItem onClick={() => {
+                <MenuItem onClick={() => {
                     handleComponentDelete();
                     handleCloseContextMenu();
                 }} >
@@ -373,7 +373,7 @@ export default function ResistorDraggable({ positions, component, setPositions, 
                     <ListItemText>
                         소자 삭제하기
                     </ListItemText>
-                </MenuItem> */}
+                </MenuItem>
             </Menu>
 
             <Modal

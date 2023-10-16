@@ -356,7 +356,7 @@ export default function VoltageDraggable({ positions, component, setComponents, 
                         전압 조절하기
                     </ListItemText>
                 </MenuItem>
-                {/* <MenuItem onClick={() => {
+                <MenuItem onClick={() => {
                     handleComponentDelete();
                     handleCloseContextMenu();
                 }} >
@@ -366,7 +366,7 @@ export default function VoltageDraggable({ positions, component, setComponents, 
                     <ListItemText>
                         소자 삭제하기
                     </ListItemText>
-                </MenuItem> */}
+                </MenuItem>
             </Menu>
 
             <Modal

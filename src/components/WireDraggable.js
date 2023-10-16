@@ -262,7 +262,7 @@ export default function WireDraggable({ positions, component, setPositions, circ
                 <div id={`component${name}_nextEP`} >{nextEP}</div>
             </div>
 
-            {/* <Menu
+            <Menu
                 open={contextMenu !== null}
                 onClose={handleCloseContextMenu}
                 anchorReference='anchorPosition'
@@ -283,7 +283,7 @@ export default function WireDraggable({ positions, component, setPositions, circ
                         소자 삭제하기
                     </ListItemText>
                 </MenuItem>
-            </Menu> */}
+            </Menu>
         </div>
     )
 }
