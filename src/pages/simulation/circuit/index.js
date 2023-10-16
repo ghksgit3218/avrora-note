@@ -90,6 +90,8 @@ export default function CircuitApp({ componentsURI, positionsURI, nodeRuleURI })
 
     const [open, setOpen] = useState(false);
 
+    console.log(circuitInfo)
+
     // useEffect(() => {
     //     const newPositions = Object.assign({}, positions);
     //     let changed = false;
@@ -300,6 +302,7 @@ export default function CircuitApp({ componentsURI, positionsURI, nodeRuleURI })
 
             try {
                 if(components.filter(cp => cp instanceof Voltage && !(cp instanceof Wire)).length === 1) {
+                    console.log(circuit.getEquivCircuitString())
                     setEquivCircuitString(circuit.getEquivCircuitString());
                 }
             } catch(err) {

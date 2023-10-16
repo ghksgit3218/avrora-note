@@ -150,8 +150,8 @@ export default function ResistorDraggable({ positions, component, setPositions, 
             const prevNodeKey = findNodeKeyConnectedToNode(prevNode);
             const nextNodeKey = findNodeKeyConnectedToNode(nextNode);
 
-            const newPrevEP = connections[prevNodeKey].normalizedElectricPotential;
-            const newNextEP = connections[nextNodeKey].normalizedElectricPotential;
+            const newPrevEP = connections[prevNodeKey]?.normalizedElectricPotential;
+            const newNextEP = connections[nextNodeKey]?.normalizedElectricPotential;
             setPrevEP(newPrevEP);
             setNextEP(newNextEP);
         } else {

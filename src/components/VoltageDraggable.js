@@ -151,8 +151,8 @@ export default function VoltageDraggable({ positions, component, setComponents, 
             const prevNodeKey = findNodeKeyConnectedToNode(prevNode);
             const nextNodeKey = findNodeKeyConnectedToNode(nextNode);
 
-            const newPrevEP = connections[prevNodeKey].normalizedElectricPotential;
-            const newNextEP = connections[nextNodeKey].normalizedElectricPotential;
+            const newPrevEP = connections[prevNodeKey]?.normalizedElectricPotential;
+            const newNextEP = connections[nextNodeKey]?.normalizedElectricPotential;
             setPrevEP(newPrevEP);
             setNextEP(newNextEP);
         } else {
