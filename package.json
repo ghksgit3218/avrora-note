@@ -9,9 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.0.8",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@excalidraw/excalidraw": "^0.16.1",
+    "@fontsource/inter": "^5.0.13",
+    "@mui/icons-material": "^5.14.13",
+    "@mui/joy": "^5.0.0-beta.10",
+    "@mui/material": "^5.14.13",
+    "fraction": "^0.2.0",
+    "mathjs": "^11.11.2",
+    "next": "13.5.4",
     "react": "^18",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18",
-    "next": "13.5.4"
+    "react-draggable": "^4.4.6",
+    "react-rnd": "^10.4.1",
+    "react-sortablejs": "^6.1.4",
+    "sass": "^1.69.3",
+    "scss": "^0.2.4",
+    "sortablejs": "^1.15.0",
+    "two.js": "^0.8.11"
   },
   "devDependencies": {
     "eslint": "^8",

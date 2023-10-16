@@ -1,0 +1,69 @@
+.container {
+    width: 100vw; height: 100vh;
+    min-width: 1000px; min-height: 700px;
+    display: flex;
+    justify-content: center; align-items: center;
+    overflow: auto;
+}
+
+.centeredDiv {
+    h4, p {
+        margin: 0;
+    }
+
+    margin-top: 50px; margin-bottom: 50px;
+}
+
+.gray {
+    color: gray;
+}
+
+.menuButtons {
+    margin-top: 10px; margin-bottom: 10px;
+    display: flex; gap: 10px;
+    justify-content: flex-end;
+}
+
+.simulatorWrapper {
+    width: 800px; height: 500px;
+    border: 3px solid black;
+    display: flex;
+
+    .components {
+        width: 150px; height: 494px;
+        border-right: 2px solid gray;
+        padding-left: 10px; padding-right: 10px; padding-top: 10px;
+        background-color: lightgray;
+
+        h1 {
+            margin-top: 0px;
+        }
+    }
+
+    .field {
+        width: 500px; height: 494px;
+        border-right: 2px solid gray;
+        // padding-left: 10px; padding-right: 10px; padding-top: 10px;
+
+        h1 {
+            margin-top: 0px;
+        }
+    }
+
+    .datas {
+        width: 150px; height: 494px;
+        overflow: auto;
+        border-right: 2px solid gray;
+        padding-left: 10px; padding-right: 10px; padding-top: 10px;
+        background-color: lightgray;
+
+        h1 {
+            margin-top: 0px;
+        }
+    }
+
+    .inlineComponent {
+        display: flex;
+        align-items: center;
+    }
+}
