@@ -464,11 +464,11 @@ export default function CircuitApp({ componentsURI, positionsURI, nodeRuleURI })
                             {
                                 components.map(component => {
                                     if(component instanceof Voltage && !(component instanceof Wire)) {
-                                        return <VoltageDraggable component={component} positions={positions} setPositions={setPositions} setNodeRule={setNodeRule} setComponents={setComponents} circuitInfo={circuitInfo} />
+                                        return <VoltageDraggable key={component.name} component={component} positions={positions} setPositions={setPositions} setNodeRule={setNodeRule} setComponents={setComponents} circuitInfo={circuitInfo} />
                                     } else if(component instanceof Wire) {
-                                        return <WireDraggable component={component} positions={positions} setPositions={setPositions} setNodeRule={setNodeRule} setComponents={setComponents} circuitInfo={circuitInfo} />
+                                        return <WireDraggable key={component.name} component={component} positions={positions} setPositions={setPositions} setNodeRule={setNodeRule} setComponents={setComponents} circuitInfo={circuitInfo} />
                                     } else if(component instanceof Resistor) {
-                                        return <ResistorDraggable component={component} positions={positions} setPositions={setPositions} setNodeRule={setNodeRule} setComponents={setComponents} circuitInfo={circuitInfo} />
+                                        return <ResistorDraggable key={component.name} component={component} positions={positions} setPositions={setPositions} setNodeRule={setNodeRule} setComponents={setComponents} circuitInfo={circuitInfo} />
                                     }
                                 })
                             }
