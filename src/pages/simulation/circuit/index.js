@@ -282,6 +282,8 @@ export default function CircuitApp({ componentsURI, positionsURI, nodeRuleURI })
         setNodeRule(Object.values(newNodeRule));
     }, [positions, components]);
 
+    // console.log(circuitInfo);
+
     useEffect(() => {
         const nodes = components.map(cp => ({ prev: cp.prevNode, next: cp.nextNode }));
         const allNodes = nodeRule.reduce((a, c) => [...a, ...c], []);
