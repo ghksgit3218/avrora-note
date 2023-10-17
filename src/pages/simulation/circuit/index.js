@@ -283,27 +283,43 @@ export default function CircuitApp({ componentsURI, positionsURI, nodeRuleURI })
     }, [positions, components]);
 
     useEffect(() => {
-        const nextNodes = components.map(cp => cp.nextNode);
+        const nodes = components.map(cp => ({ prev: cp.prevNode, next: cp.nextNode }));
         const allNodes = nodeRule.reduce((a, c) => [...a, ...c], []);
 
-        if(nextNodes.length > 0 && nextNodes.every(node => allNodes.includes(node))) {
+        if(nodes.length > 0 && nodes.every(node => allNodes.includes(node.prev) || allNodes.includes(node.next))) {
             let circuit;
+            let circuitInfoCounter = 0;
+            let equivCounter = 0;
 
-            try {
-                circuit = new Circuit(...components).applyRule(nodeRule).solve();
-                setCircuitInfo(circuit);
-            } catch(err) {
-                console.error(err);
-                setCircuitInfo({});
+            while(circuitInfoCounter > 2) {
+                try {
+                    circuit = new Circuit(...components).applyRule(nodeRule).solve();
+                    setCircuitInfo(circuit);
+                    circuitInfoCounter = 3;
+                } catch(err) {
+                    circuitInfoCounter++;
+
+                    if(circuitInfoCounter > 2) {
+                        console.error(err);
+                        setCircuitInfo({});
+                    }
+                }
             }
 
-            try {
-                if(components.filter(cp => cp instanceof Voltage && !(cp instanceof Wire)).length === 1) {
-                    setEquivCircuitString(circuit.getEquivCircuitString());
+            while(equivCounter > 2) {
+                try {
+                    if(components.filter(cp => cp instanceof Voltage && !(cp instanceof Wire)).length === 1) {
+                        setEquivCircuitString(circuit.getEquivCircuitString());
+                        equivCounter = 3;
+                    }
+                } catch(err) {
+                    equivCounter++;
+
+                    if(equivCounter > 2) {
+                        console.error(err);
+                        setEquivCircuitString('');
+                    }
                 }
-            } catch(err) {
-                console.error(err);
-                setEquivCircuitString('');
             }
         } else {
             setCircuitInfo({});
@@ -314,6 +330,8 @@ export default function CircuitApp({ componentsURI, positionsURI, nodeRuleURI })
     useEffect(() => {
         if(voltageCount + resistorCount + wireCount >= 24) {
             setNoMoreCp(true);
+        } else {
+            setNoMoreCp(false);
         }
     }, [voltageCount, resistorCount, wireCount]);
 
